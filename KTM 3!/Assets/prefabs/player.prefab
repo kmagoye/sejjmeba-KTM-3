@@ -50,13 +50,13 @@ MonoBehaviour:
   directionfacing: {x: 0, y: 1}
   Box: {fileID: 0}
   SpriteRenderer: {fileID: 4744626628738438118}
-  winscreen: {fileID: 8650324103141291021, guid: bc6c1bc5dea5e754c97bbaac7c82bdec,
-    type: 3}
+  winscreen: {fileID: 8650324103141291021, guid: bc6c1bc5dea5e754c97bbaac7c82bdec, type: 3}
   camwidth: 0
   camheight: 0
   movetime: 0
   speed: 10
   startHolding: 0
+  lastlevel: 0
 --- !u!61 &1012555353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,9 +186,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -8420670720628680731, guid: 276203a0813a0284bb75dee52829b23d,
-    type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -8420670720628680731, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
