@@ -54,7 +54,7 @@ MonoBehaviour:
   camwidth: 0
   camheight: 0
   movetime: 0
-  speed: 10
+  speed: 7
   startHolding: 0
   lastlevel: 0
 --- !u!61 &1012555353
