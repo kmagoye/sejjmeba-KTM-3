@@ -44,13 +44,6 @@ public class playercontroller : MonoBehaviour
         Undomanager = GetComponent<undomanager>();
         camera = FindObjectOfType<Camera>();
 
-        //camera.rect = new Rect(1,1,camwidth,camheight);
-
-        //float x = (100f - 100f / (Screen.width / camwidth)) / 100f;
-        //float y = (100f - 100f / (Screen.height / camheight)) / 100f;
-        //camera.rect = new Rect(x, y, 1, 1);
-        
-
         StartCoroutine(FrameDelay(10));
 
         VisualUpdateOld();
@@ -63,10 +56,12 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("up") && Controls.up == true)
             {
                 Move(directionfacing, true);
+                FindObjectOfType<data_script>().PlayerInput(1);
             }
             if (Input.GetKeyDown("down") && Controls.down == true)
             {
                 Move(directionfacing, false);
+                FindObjectOfType<data_script>().PlayerInput(1);
             }
 
             if (Input.GetKeyDown("right") && Controls.right == true)
@@ -81,6 +76,24 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("x"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                FindObjectOfType<data_script>().PlayerInput(2);
+            }
+
+            if (Input.GetKeyDown("up") && Controls.up == false)
+            {
+                FindObjectOfType<data_script>().PlayerInput(3);
+            }
+            if (Input.GetKeyDown("down") && Controls.down == false)
+            {
+                FindObjectOfType<data_script>().PlayerInput(3);
+            }
+            if (Input.GetKeyDown("right") && Controls.right == false)
+            {
+                FindObjectOfType<data_script>().PlayerInput(3);
+            }
+            if (Input.GetKeyDown("left") && Controls.left == false)
+            {
+                FindObjectOfType<data_script>().PlayerInput(3);
             }
         }
 
@@ -463,7 +476,9 @@ public class playercontroller : MonoBehaviour
     {
         Undomanager.Set();
 
-        if(!left)
+        FindObjectOfType<data_script>().PlayerInput(1);
+
+        if (!left)
         {
             VisualUpdateNew(false);
 
@@ -683,6 +698,7 @@ public class playercontroller : MonoBehaviour
     {
         Instantiate(winscreen);
         this.GetComponent<playercontroller>().enabled = false;
+        FindObjectOfType<data_script>().EndLevel();
     }
 
     public void Undo(Vector2 position, Vector2 direction, boxscript box)

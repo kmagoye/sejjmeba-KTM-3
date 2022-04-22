@@ -22,6 +22,7 @@ public class winlevelscript : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            FindObjectOfType<data_script>().SetTime();
         }
     }
 }

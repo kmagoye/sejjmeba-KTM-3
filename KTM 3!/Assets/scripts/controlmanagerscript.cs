@@ -16,6 +16,12 @@ public class controlmanagerscript : MonoBehaviour
     public GameObject Right;
     public GameObject Space;
 
+    public SpriteRenderer UpOn;
+    public SpriteRenderer DownOn;
+    public SpriteRenderer LeftOn;
+    public SpriteRenderer RightOn;
+    public SpriteRenderer SpaceOn;
+
     pressureplatescript[] pressureplates;
 
     private void Start()
@@ -110,6 +116,15 @@ public class controlmanagerscript : MonoBehaviour
                 animator.SetBool("on", false);
             }
         }
+    }
+
+    private void Update()
+    {
+        SpaceOn.enabled = Input.GetKey("space");
+        LeftOn.enabled = Input.GetKey("left");
+        RightOn.enabled = Input.GetKey("right");
+        UpOn.enabled = Input.GetKey("up");
+        DownOn.enabled = Input.GetKey("down");
     }
 
 }
