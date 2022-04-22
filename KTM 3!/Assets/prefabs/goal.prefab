@@ -127,6 +127,8 @@ MonoBehaviour:
   on: {fileID: -8717017754119436831, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   off: {fileID: 4035501790466999928, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   SpriteRenderer: {fileID: 1386541208799063809}
+  check: {fileID: 651584598201231809, guid: b2a4369685602d242ac2d1defa7bfce4, type: 3}
+  offset: {x: 0, y: 4}
 --- !u!50 &497027598
 Rigidbody2D:
   serializedVersion: 4

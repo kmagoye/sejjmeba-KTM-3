@@ -18,7 +18,10 @@ public class pressureplatescript : MonoBehaviour
     public int type; // up:1 down:2 left:3 right:4 space:5
     public bool pressed;
     public bool startOn;
-    
+
+    public GameObject check;
+    check_script MyCheck;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -79,6 +82,8 @@ public class pressureplatescript : MonoBehaviour
 
     private void Update()
     {
+        MyCheck.On = pressed;
+
         RaycastHit2D box = Physics2D.Raycast(transform.position, new Vector2(0, 1), 0.1f);
 
         if (box == true && box.transform.CompareTag("box"))
@@ -134,5 +139,11 @@ public class pressureplatescript : MonoBehaviour
                     }
             }
         }
+    }
+
+    public void MakeCheck()
+    {
+        GameObject x = Instantiate(check, FindObjectOfType<check_script>().transform.position, transform.rotation);
+        MyCheck = x.GetComponent<check_script>();
     }
 }

@@ -330,18 +330,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: pressure plate
       objectReference: {fileID: 0}
-    - target: {fileID: 1205988015375394748, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
-      propertyPath: type
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205988015375394748, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
-      propertyPath: startOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205988015375394748, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
-      propertyPath: inverted
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1205988015375394750, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -405,11 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29
+      value: -8.55
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.z
@@ -704,11 +692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298712, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -10.38
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298712, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298712, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_LocalPosition.z
