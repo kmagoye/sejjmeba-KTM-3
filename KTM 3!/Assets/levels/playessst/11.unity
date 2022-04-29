@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: control manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1049343548266176262, guid: e46fc11b758f6034587abaa545436065, type: 3}
+      propertyPath: down
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1049343548266176263, guid: e46fc11b758f6034587abaa545436065, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -254,11 +258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9641695
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.018695593
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_LocalPosition.z
