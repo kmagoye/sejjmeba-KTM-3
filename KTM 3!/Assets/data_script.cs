@@ -22,6 +22,8 @@ public class data_script : MonoBehaviour
 
     public void EndLevel()
     {
+        print("asd");
+
         times.Add(Mathf.RoundToInt(Time.realtimeSinceStartup - InitialTime));
         moves.Add(a);
         resets.Add(b);

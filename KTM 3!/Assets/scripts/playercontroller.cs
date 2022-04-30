@@ -34,6 +34,8 @@ public class playercontroller : MonoBehaviour
 
     public bool lastlevel = false;
 
+    public bool testmode;
+
     private void Start()
     {
         Application.targetFrameRate = 60;
@@ -56,12 +58,12 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("up") && Controls.up == true)
             {
                 Move(directionfacing, true);
-                FindObjectOfType<data_script>().PlayerInput(1);
+                DataInput(1);
             }
             if (Input.GetKeyDown("down") && Controls.down == true)
             {
                 Move(directionfacing, false);
-                FindObjectOfType<data_script>().PlayerInput(1);
+                DataInput(1);
             }
 
             if (Input.GetKeyDown("right") && Controls.right == true)
@@ -76,24 +78,24 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("x"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                FindObjectOfType<data_script>().PlayerInput(2);
+                DataInput(2);
             }
 
             if (Input.GetKeyDown("up") && Controls.up == false)
             {
-                FindObjectOfType<data_script>().PlayerInput(3);
+                DataInput(3);
             }
             if (Input.GetKeyDown("down") && Controls.down == false)
             {
-                FindObjectOfType<data_script>().PlayerInput(3);
+                DataInput(3);
             }
             if (Input.GetKeyDown("right") && Controls.right == false)
             {
-                FindObjectOfType<data_script>().PlayerInput(3);
+                DataInput(3);
             }
             if (Input.GetKeyDown("left") && Controls.left == false)
             {
-                FindObjectOfType<data_script>().PlayerInput(3);
+                DataInput(3);
             }
         }
 
@@ -476,7 +478,7 @@ public class playercontroller : MonoBehaviour
     {
         Undomanager.Set();
 
-        FindObjectOfType<data_script>().PlayerInput(1);
+        DataInput(1);
 
         if (!left)
         {
@@ -698,7 +700,7 @@ public class playercontroller : MonoBehaviour
     {
         Instantiate(winscreen);
         this.GetComponent<playercontroller>().enabled = false;
-        FindObjectOfType<data_script>().EndLevel();
+        DataInput(4);
     }
 
     public void Undo(Vector2 position, Vector2 direction, boxscript box)
@@ -782,4 +784,16 @@ public class playercontroller : MonoBehaviour
         canMove = true;
     }
 
+    void DataInput(int x)
+    {
+        if (testmode == false)
+        {
+            FindObjectOfType<data_script>().PlayerInput(x);
+            
+            if(x == 4)
+            {
+                FindObjectOfType<data_script>().EndLevel();
+            }
+        }
+    }
   }
