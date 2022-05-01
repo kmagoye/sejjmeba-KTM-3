@@ -1786,6 +1786,10 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: testmode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: startHolding
       value: 1
       objectReference: {fileID: 0}
@@ -1809,6 +1813,10 @@ PrefabInstance:
     - target: {fileID: 1205988015375394747, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
       propertyPath: m_Name
       value: pressure plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205988015375394748, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
+      propertyPath: startOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1205988015375394750, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
       propertyPath: m_RootOrder
