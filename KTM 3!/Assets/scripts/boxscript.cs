@@ -177,8 +177,8 @@ public class boxscript : MonoBehaviour
             {
                 if (hit.transform.CompareTag("hole"))
                 {
-                    print(hit.transform.name);
-                    inHole = true;
+                    StartCoroutine(fall(12));
+                    //inHole = true;
                 }
                 else
                 {
@@ -252,5 +252,21 @@ public class boxscript : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    IEnumerator fall(float length)
+    {
+        float x = 0;
+        
+        while (x < length)
+        {
+            x++;
+
+            this.transform.localScale = new Vector2(1 - x*(1/length), 1 - x*(1/length));
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        inHole = true;
     }
 }

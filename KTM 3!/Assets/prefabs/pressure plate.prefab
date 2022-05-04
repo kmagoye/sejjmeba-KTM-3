@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   up: {fileID: -6171851250645186540, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
-  down: {fileID: -6140826305895023941, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
+  down: {fileID: -2890417086725145291, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   left: {fileID: 3212541487564439254, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
-  right: {fileID: -2890417086725145291, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
+  right: {fileID: -6140826305895023941, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   space: {fileID: 2537453318863259956, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
   on: {fileID: -1400832232712754758, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
-  type: 5
+  type: 2
   pressed: 0
   startOn: 1
   check: {fileID: 651584598201231809, guid: b2a4369685602d242ac2d1defa7bfce4, type: 3}
