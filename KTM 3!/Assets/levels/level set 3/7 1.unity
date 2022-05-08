@@ -1506,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pressure plate
       objectReference: {fileID: 0}
+    - target: {fileID: 1205988015375394748, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
+      propertyPath: startOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1205988015375394750, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
       propertyPath: m_RootOrder
       value: 2
