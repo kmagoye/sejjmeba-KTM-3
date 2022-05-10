@@ -462,8 +462,6 @@ public class playercontroller : MonoBehaviour
     {
         Undomanager.Set();
 
-        DataInput(1);
-
         if (!left)
         {
             lastmove = 4;
@@ -690,7 +688,7 @@ public class playercontroller : MonoBehaviour
     {
         Instantiate(winscreen);
         this.GetComponent<playercontroller>().enabled = false;
-        DataInput(4);
+        DataInput(6, gameObject.name);
     }
 
     public void Undo(Vector2 position, Vector2 direction, boxscript box)
@@ -774,13 +772,13 @@ public class playercontroller : MonoBehaviour
         canMove = true;
     }
 
-    void DataInput(int x)
+    public void DataInput(int x, string name) //1 -> 5 are moves, 6 ends level
     {
         if (testmode == false)
         {
-            FindObjectOfType<data_script>().LastMove(x);
+            FindObjectOfType<data_script>().LastMove(x, name);
             
-            if(x == 4)
+            if(x == 6)
             {
                 FindObjectOfType<data_script>().EndLevel();
             }

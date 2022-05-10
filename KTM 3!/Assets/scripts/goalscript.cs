@@ -17,6 +17,8 @@ public class goalscript : MonoBehaviour
     check_script MyCheck;
     public Vector2 offset;
 
+    bool x = false;
+
     private void Awake()
     { 
         Vector3 checkoffset = new Vector3((FindObjectOfType<Camera>().transform.position.x + offset.x), (FindObjectOfType<Camera>().transform.position.y + offset.y), 0f);
@@ -48,11 +50,17 @@ public class goalscript : MonoBehaviour
         {
             won = true;
             SpriteRenderer.sprite = on;
+            if (!x)
+            {
+                FindObjectOfType<playercontroller>().DataInput(FindObjectOfType<playercontroller>().lastmove, gameObject.name);
+                x = true;
+            }
         }
         else
         {
             won = false;
             SpriteRenderer.sprite = off;
+            x = false;
         }
     }
 

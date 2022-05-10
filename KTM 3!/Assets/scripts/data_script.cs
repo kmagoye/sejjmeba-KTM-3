@@ -6,9 +6,6 @@ public class data_script : MonoBehaviour
 {
     public List<int> times = new List<int>();
     public List<string> lastmoves = new List<string>();
-    int a;
-    int b;
-    int c;
 
     float InitialTime;
 
@@ -20,8 +17,7 @@ public class data_script : MonoBehaviour
 
     public void EndLevel()
     {
-        print("asd");
-
+        lastmoves.Add("||");
         times.Add(Mathf.RoundToInt(Time.realtimeSinceStartup - InitialTime));
     }
 
@@ -30,27 +26,27 @@ public class data_script : MonoBehaviour
         InitialTime = Time.realtimeSinceStartup;
     }
 
-    public void PlayerInput(int x)
+    public void LastMove(int x, string name)
     {
         if (x == 1)
         {
-            lastmoves.Add("up");
+            lastmoves.Add("up" + "," + name + " ");
         }
         if (x == 2)
         {
-            lastmoves.Add("down");
+            lastmoves.Add("down" + "," + name + " ");
         }
         if (x == 3)
         {
-            lastmoves.Add("left");
+            lastmoves.Add("left" + "," + name + " ");
         }
         if (x == 4)
         {
-            lastmoves.Add("right");
+            lastmoves.Add("right" + "," + name + " ");
         }
         if (x == 5)
         {
-            lastmoves.Add("space");
+            lastmoves.Add("space" + "," + name + " ");
         }
     }
 }

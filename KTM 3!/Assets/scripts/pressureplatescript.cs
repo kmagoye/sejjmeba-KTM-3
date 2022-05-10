@@ -22,6 +22,8 @@ public class pressureplatescript : MonoBehaviour
     public GameObject check;
     check_script MyCheck;
 
+    bool x = false;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -91,15 +93,23 @@ public class pressureplatescript : MonoBehaviour
             if(box.transform.GetComponent<boxscript>().held == false)
             {
                 pressed = true;
+
+                if (!x)
+                {
+                    FindObjectOfType<playercontroller>().DataInput(FindObjectOfType<playercontroller>().lastmove, gameObject.name);
+                    x = true;
+                }
             }
             else
             {
                 pressed = false;
+                x = false;
             }
         }
         else
         {
             pressed = false;
+            x = false;
         }
 
         FindObjectOfType<controlmanagerscript>().Toggle(type, this);
