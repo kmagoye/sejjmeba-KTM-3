@@ -36,6 +36,8 @@ public class playercontroller : MonoBehaviour
 
     public bool testmode;
 
+    public int lastmove = 0; //1,up 2,down 3,left, 4,right 5,space
+
     private void Start()
     {
         Application.targetFrameRate = 60;
@@ -58,12 +60,12 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("up") && Controls.up == true)
             {
                 Move(directionfacing, true);
-                DataInput(1);
+                lastmove = 1;
             }
             if (Input.GetKeyDown("down") && Controls.down == true)
             {
                 Move(directionfacing, false);
-                DataInput(1);
+                lastmove = 2;
             }
 
             if (Input.GetKeyDown("right") && Controls.right == true)
@@ -78,24 +80,6 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("x"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                DataInput(2);
-            }
-
-            if (Input.GetKeyDown("up") && Controls.up == false)
-            {
-                DataInput(3);
-            }
-            if (Input.GetKeyDown("down") && Controls.down == false)
-            {
-                DataInput(3);
-            }
-            if (Input.GetKeyDown("right") && Controls.right == false)
-            {
-                DataInput(3);
-            }
-            if (Input.GetKeyDown("left") && Controls.left == false)
-            {
-                DataInput(3);
             }
         }
 
@@ -482,6 +466,8 @@ public class playercontroller : MonoBehaviour
 
         if (!left)
         {
+            lastmove = 4;
+
             VisualUpdateNew(false);
 
             Vector2 directionpush = new Vector2(0, 0);
@@ -521,6 +507,8 @@ public class playercontroller : MonoBehaviour
         }
         if(left)
         {
+            lastmove = 3;
+
             VisualUpdateNew(true);
 
             Vector2 directionpush = new Vector2(0, 0);
@@ -644,6 +632,8 @@ public class playercontroller : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && Controls.space)
         {
+            lastmove = 5;
+
             if (Box)
             {
                 Undomanager.Set();
@@ -788,7 +778,7 @@ public class playercontroller : MonoBehaviour
     {
         if (testmode == false)
         {
-            FindObjectOfType<data_script>().PlayerInput(x);
+            FindObjectOfType<data_script>().LastMove(x);
             
             if(x == 4)
             {

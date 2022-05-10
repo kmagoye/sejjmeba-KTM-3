@@ -5,9 +5,7 @@ using UnityEngine;
 public class data_script : MonoBehaviour
 {
     public List<int> times = new List<int>();
-    public List<int> moves = new List<int>();         //1, a
-    public List<int> resets = new List<int>();         //2, b
-    public List<int> missedinputs = new List<int>();   //3, c
+    public List<string> lastmoves = new List<string>();
     int a;
     int b;
     int c;
@@ -25,10 +23,6 @@ public class data_script : MonoBehaviour
         print("asd");
 
         times.Add(Mathf.RoundToInt(Time.realtimeSinceStartup - InitialTime));
-        moves.Add(a);
-        resets.Add(b);
-        missedinputs.Add(c);
-        a = b = c = 0;
     }
 
     public void SetTime()
@@ -38,17 +32,25 @@ public class data_script : MonoBehaviour
 
     public void PlayerInput(int x)
     {
-        if(x == 1)
+        if (x == 1)
         {
-            a++;
+            lastmoves.Add("up");
         }
-        else if(x == 2)
+        if (x == 2)
         {
-            b++;
+            lastmoves.Add("down");
         }
-        else if(x == 3)
+        if (x == 3)
         {
-            c++;
+            lastmoves.Add("left");
+        }
+        if (x == 4)
+        {
+            lastmoves.Add("right");
+        }
+        if (x == 5)
+        {
+            lastmoves.Add("space");
         }
     }
 }
