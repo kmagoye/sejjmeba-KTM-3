@@ -57,7 +57,8 @@ MonoBehaviour:
   speed: 7
   startHolding: 0
   lastlevel: 0
-  testmode: 0
+  GetTestmode: {fileID: 0}
+  lastmove: 0
 --- !u!61 &1012555353
 BoxCollider2D:
   m_ObjectHideFlags: 0

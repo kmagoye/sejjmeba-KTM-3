@@ -34,7 +34,7 @@ public class playercontroller : MonoBehaviour
 
     public bool lastlevel = false;
 
-    public bool testmode;
+    bool testmode =  false;
 
     public int lastmove = 0; //1,up 2,down 3,left, 4,right 5,space
 
