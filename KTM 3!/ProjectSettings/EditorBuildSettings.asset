@@ -45,26 +45,26 @@ EditorBuildSettings:
     path: Assets/levels/level set 4/12 2.unity
     guid: 58d64eb433f2d4535b069037eb8b0b51
   - enabled: 1
-    path: Assets/levels/level set 4/14 2.unity
-    guid: 80c0046fcdce74f229ea00d39326868b
-  - enabled: 1
     path: Assets/levels/level set 4/16 2.unity
     guid: e1581482c58da4153a0fbe3e5e3a129a
+  - enabled: 1
+    path: Assets/levels/level set 4/14 2.unity
+    guid: 80c0046fcdce74f229ea00d39326868b
   - enabled: 1
     path: Assets/levels/level set 4/17 1.unity
     guid: bb240015024d74f199d46551773b78e2
   - enabled: 1
-    path: Assets/levels/level set 4/18 2.unity
-    guid: 6cb42c2fbabf94aababb8d5e7a82eefb
-  - enabled: 1
     path: Assets/levels/level set 4/20 2.unity
     guid: a273d13d51cc7453abd2c1c94801e335
   - enabled: 1
-    path: Assets/levels/level set 4/19 1.unity
-    guid: 22773576822c54db5b43f5ffc7f583bb
+    path: Assets/levels/level set 4/18 2.unity
+    guid: 6cb42c2fbabf94aababb8d5e7a82eefb
   - enabled: 1
     path: Assets/levels/level set 4/15 2.unity
     guid: 4c639a6e218df4593897c06e9f4f115d
+  - enabled: 1
+    path: Assets/levels/level set 4/19 1.unity
+    guid: 22773576822c54db5b43f5ffc7f583bb
   - enabled: 1
     path: Assets/levels/setup/data.unity
     guid: 38b03827f8c9d4d40846c48b5a163ac7

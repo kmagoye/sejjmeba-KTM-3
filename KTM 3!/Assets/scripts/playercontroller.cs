@@ -10,9 +10,11 @@ public class playercontroller : MonoBehaviour
     public boxscript Box;
     public GameObject SpriteRenderer;
     public GameObject winscreen;
+    public GameObject failmap;
 
     Rigidbody2D rb2d;
     undomanager Undomanager;
+    failmapscript Failmap;
     controlmanagerscript Controls;
     pressureplatescript[] plates;
     Camera camera;
@@ -34,18 +36,21 @@ public class playercontroller : MonoBehaviour
 
     public bool lastlevel = false;
 
-    bool testmode =  false;
+    bool testmode = false;
 
     public int lastmove = 0; //1,up 2,down 3,left, 4,right 5,space
 
     private void Start()
     {
+        Instantiate(failmap);
+
         Application.targetFrameRate = 60;
         Controls = FindObjectOfType<controlmanagerscript>();
         plates = FindObjectsOfType<pressureplatescript>();
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
         Undomanager = GetComponent<undomanager>();
+        Failmap = FindObjectOfType<failmapscript>().GetComponent<failmapscript>();
         camera = FindObjectOfType<Camera>();
 
         StartCoroutine(FrameDelay(10));
@@ -77,20 +82,25 @@ public class playercontroller : MonoBehaviour
                 CheckSwing(true);
             }
 
+            if (Input.GetKeyDown("space") && Controls.space)
+            {
+                PickUp();
+            }
+
             if (Input.GetKeyDown("x"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
-        PickUp();
-
         CheckWin();
     }
 
     private void Move(Vector2 directionmoving, bool foreward)
     {
-        if(foreward == false)
+        Failmap.Playermove();
+
+        if (foreward == false)
         {
             directionmoving = -directionmoving;
         }
@@ -462,6 +472,8 @@ public class playercontroller : MonoBehaviour
     {
         Undomanager.Set();
 
+        Failmap.Playermove();
+
         if (!left)
         {
             lastmove = 4;
@@ -628,37 +640,36 @@ public class playercontroller : MonoBehaviour
 
     void PickUp()
     {
-        if (Input.GetKeyDown("space") && Controls.space)
+        Failmap.Playermove();
+
+        lastmove = 5;
+
+        if (Box)
         {
-            lastmove = 5;
+            Undomanager.Set();
 
-            if (Box)
-            {
-                Undomanager.Set();
+            Box.held = false;
+            Box.transform.localScale = new Vector3(1,1,1);
+            Box.CheckFloor();
+            Box = null;
+        }
+        else
+        {
+            RaycastHit2D box = Physics2D.Raycast(transform.position, directionfacing, 1f, boxlayer);
 
-                Box.held = false;
-                Box.transform.localScale = new Vector3(1,1,1);
-                Box.CheckFloor();
-                Box = null;
-            }
-            else
-            {
-                RaycastHit2D box = Physics2D.Raycast(transform.position, directionfacing, 1f, boxlayer);
+            if (box)
+            {   
+                if (box.transform.CompareTag("box"))
+                {
+                    Undomanager.Set();
 
-                if (box)
-                {   
-                    if (box.transform.CompareTag("box"))
-                    {
-                        Undomanager.Set();
-
-                        Box = box.transform.GetComponent<boxscript>();
-                        Box.transform.localScale = new Vector3(.9f, .9f, 1);
-                        Box.held = true;
-                        Box.inHole = false;
-                    }
+                    Box = box.transform.GetComponent<boxscript>();
+                    Box.transform.localScale = new Vector3(.9f, .9f, 1);
+                    Box.held = true;
+                    Box.inHole = false;
                 }
             }
-        } 
+        }
     }  
 
     void CheckWin()

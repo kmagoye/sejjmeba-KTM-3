@@ -51,13 +51,13 @@ MonoBehaviour:
   Box: {fileID: 0}
   SpriteRenderer: {fileID: 4744626628738438118}
   winscreen: {fileID: 8650324103141291021, guid: bc6c1bc5dea5e754c97bbaac7c82bdec, type: 3}
+  failmap: {fileID: 2596528542800873242, guid: aafb7e5d0feba4c2abdf565f046599d7, type: 3}
   camwidth: 0
   camheight: 0
   movetime: 0
   speed: 7
   startHolding: 0
   lastlevel: 0
-  GetTestmode: {fileID: 0}
   lastmove: 0
 --- !u!61 &1012555353
 BoxCollider2D:

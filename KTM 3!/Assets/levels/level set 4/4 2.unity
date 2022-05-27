@@ -1287,6 +1287,10 @@ PrefabInstance:
       propertyPath: space
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1049343548266176262, guid: e46fc11b758f6034587abaa545436065, type: 3}
+      propertyPath: Truespace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1049343548266176263, guid: e46fc11b758f6034587abaa545436065, type: 3}
       propertyPath: m_RootOrder
       value: 0

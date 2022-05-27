@@ -10,6 +10,8 @@ public class controlmanagerscript : MonoBehaviour
     public bool right;
     public bool space;
 
+    public bool Truespace = true;
+
     public GameObject Up;
     public GameObject Down;
     public GameObject Left;
@@ -120,7 +122,10 @@ public class controlmanagerscript : MonoBehaviour
 
     private void Update()
     {
-        SpaceOn.enabled = Input.GetKey("space");
+        if (Truespace)
+        {
+            SpaceOn.enabled = Input.GetKey("space");
+        }
         LeftOn.enabled = Input.GetKey("left");
         RightOn.enabled = Input.GetKey("right");
         UpOn.enabled = Input.GetKey("up");

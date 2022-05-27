@@ -10,6 +10,8 @@ public class undomanager : MonoBehaviour
 
     Stack stack;
 
+    int x = 0;
+
     private void Start()
     {
         stack = new Stack();
@@ -20,10 +22,11 @@ public class undomanager : MonoBehaviour
     public void Set()
     {
         stack.Push(new gamestate());
+        x++;
     }
     private void Update()
     {
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z") && x != 0 )
         {
             gamestate gotstate = stack.Pop();
 
@@ -33,6 +36,8 @@ public class undomanager : MonoBehaviour
             {
                 boxes[i].Undo(gotstate.BoxPos[i], gotstate.BoxHeld[i]);
             }
+
+            x--;
         }
     }
 

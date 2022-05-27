@@ -175,12 +175,13 @@ public class boxscript : MonoBehaviour
 
             if (hit == true)
             {
+                print(hit.transform.name);
+
                 if (hit.transform.CompareTag("hole"))
                 {
                     StartCoroutine(fall(12));
-                    //inHole = true;
                 }
-                else
+                else 
                 {
                     inHole = false;
                 }

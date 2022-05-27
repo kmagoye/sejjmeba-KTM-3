@@ -141,9 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   times: 
-  moves: 
-  resets: 
-  missedinputs: 
+  lastmoves: []
 --- !u!850595691 &1456764431
 LightingSettings:
   m_ObjectHideFlags: 0
