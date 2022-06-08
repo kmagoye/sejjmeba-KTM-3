@@ -8,7 +8,6 @@ public class playercontroller : MonoBehaviour
     public Vector2 directionfacing;
 
     public boxscript Box;
-    public GameObject SpriteRenderer;
     public GameObject winscreen;
     public GameObject failmap;
 
@@ -18,6 +17,12 @@ public class playercontroller : MonoBehaviour
     controlmanagerscript Controls;
     pressureplatescript[] plates;
     Camera camera;
+    Animator Animator;
+
+    public Sprite right;
+    public Sprite left;
+    public Sprite up;
+    public Sprite down;
 
     public float camwidth;
     public float camheight;
@@ -30,9 +35,10 @@ public class playercontroller : MonoBehaviour
     int fps;
     public int speed;
 
+    public bool canMove = true;
+
     public bool startHolding = false;
 
-    bool canMove = false;
 
     public bool lastlevel = false;
 
@@ -52,10 +58,11 @@ public class playercontroller : MonoBehaviour
         Undomanager = GetComponent<undomanager>();
         Failmap = FindObjectOfType<failmapscript>().GetComponent<failmapscript>();
         camera = FindObjectOfType<Camera>();
+        Animator = GetComponent<Animator>();
 
         StartCoroutine(FrameDelay(10));
 
-        VisualUpdateOld();
+        VisualUpdateInstant();
     }
 
     void Update()
@@ -127,40 +134,72 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    private void VisualUpdateOld()
+    private void VisualUpdateInstant()
     {
-        if(directionfacing == new Vector2(1, 0))
+        if(directionfacing.x > 0)
         {
-            SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, -90);
+            Animator.SetTrigger("right");
         }
-        if (directionfacing == new Vector2(-1, 0))
+        if(directionfacing.x < 0)
         {
-            SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Animator.SetTrigger("left");
         }
-        if (directionfacing == new Vector2(0, 1))
+        if (directionfacing.y > 0)
         {
-            SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Animator.SetTrigger("up");
         }
-        if (directionfacing == new Vector2(0, -1))
+        if (directionfacing.x < 0)
         {
-            SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, 180);
+            Animator.SetTrigger("down");
         }
     }
 
-    private void VisualUpdateNew(bool left)
+    void VisualUpdate(Vector2 oldDir, Vector2 newDir)
     {
-        float goalangle = 0;
-
-        if (left)
+        if(oldDir.x > 0)
         {
-            goalangle = 90;
+            if(newDir.y > 0)
+            {
+                Animator.SetTrigger("right to up");
+            }
+            if (newDir.y < 0)
+            {
+                Animator.SetTrigger("right to down");
+            }
         }
-        else
+        if (oldDir.x < 0)
         {
-            goalangle = - 90;
+            if (newDir.y > 0)
+            {
+                Animator.SetTrigger("left to up");
+            }
+            if (newDir.y < 0)
+            {
+                Animator.SetTrigger("left to down");
+            }
         }
-
-        StartCoroutine(SwingRoutine(goalangle));
+        if (oldDir.y > 0)
+        {
+            if (newDir.x < 0)
+            {
+                Animator.SetTrigger("up to left");
+            }
+            if (newDir.x > 0)
+            {
+                Animator.SetTrigger("up to right");
+            }
+        }
+        if (oldDir.y < 0)
+        {
+            if (newDir.x < 0)
+            {
+                Animator.SetTrigger("down to left");
+            }
+            if (newDir.x > 0)
+            {
+                Animator.SetTrigger("down to right");
+            }
+        }
     }
 
     public void CheckSwing(bool left)
@@ -478,8 +517,7 @@ public class playercontroller : MonoBehaviour
         {
             lastmove = 4;
 
-            VisualUpdateNew(false);
-
+            Vector2 oldDirection = directionfacing;
             Vector2 directionpush = new Vector2(0, 0);
             int corner = 0;
 
@@ -507,6 +545,8 @@ public class playercontroller : MonoBehaviour
                 directionpush = new Vector2(1, 0);
                 corner = 2;
             }
+            
+            VisualUpdate(oldDirection , directionfacing);
 
             if (Box != null)
             {
@@ -519,8 +559,7 @@ public class playercontroller : MonoBehaviour
         {
             lastmove = 3;
 
-            VisualUpdateNew(true);
-
+            Vector2 oldDirection = directionfacing;
             Vector2 directionpush = new Vector2(0, 0);
             int corner = 0;
 
@@ -549,6 +588,8 @@ public class playercontroller : MonoBehaviour
                 directionpush = new Vector2(-1, 0);
                 corner = 1;
             }
+
+            VisualUpdate(oldDirection, directionfacing);
 
             if (Box != null)
             {
@@ -708,7 +749,7 @@ public class playercontroller : MonoBehaviour
         directionfacing = direction;
         Box = box;
 
-        VisualUpdateOld();
+        VisualUpdateInstant();
     }
 
     IEnumerator MoveRoutine(Vector2 dir)
@@ -721,24 +762,6 @@ public class playercontroller : MonoBehaviour
         {
 
             transform.Translate(new Vector2(dir.x / movetime, dir.y / movetime), Space.Self);
-            x++;
-
-            yield return new WaitForEndOfFrame();
-        }
-
-        canMove = true;
-    }
-
-    IEnumerator SwingRoutine(float goal)
-    {
-        canMove = false;
-
-        int x = 0;
-
-        while (x < movetime)
-        {
-
-            SpriteRenderer.transform.Rotate(new Vector3(0, 0, goal/movetime));
             x++;
 
             yield return new WaitForEndOfFrame();
