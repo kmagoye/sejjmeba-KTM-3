@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: goal
       objectReference: {fileID: 0}
+    - target: {fileID: 1386541208799063809, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 1386541208799063810, guid: 8d7dedc74a1a49b4c9cfeb684bb07427, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -758,11 +762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.z
