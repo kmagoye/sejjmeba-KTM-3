@@ -553,6 +553,7 @@ public class playercontroller : MonoBehaviour
                 Box.swingAdjacent(directionfacing, directionpush);
                 Box.swingLateral(directionfacing, corner);
                 Box.VisualSwing(left);
+                Box.Horizontal = !Box.Horizontal;
             }
         }
         if(left)
@@ -596,6 +597,7 @@ public class playercontroller : MonoBehaviour
                 Box.swingAdjacent(directionfacing, directionpush);
                 Box.swingLateral(directionfacing, corner);
                 Box.VisualSwing(left);
+                Box.Horizontal = !Box.Horizontal;
             }
         }
     }
@@ -690,7 +692,7 @@ public class playercontroller : MonoBehaviour
             Undomanager.Set();
 
             Box.held = false;
-            Box.transform.localScale = new Vector3(1,1,1);
+            Box.VisualUpdate(false);
             Box.CheckFloor();
             Box = null;
         }
@@ -705,7 +707,7 @@ public class playercontroller : MonoBehaviour
                     Undomanager.Set();
 
                     Box = box.transform.GetComponent<boxscript>();
-                    Box.transform.localScale = new Vector3(.9f, .9f, 1);
+                    Box.VisualUpdate(true);
                     Box.held = true;
                     Box.inHole = false;
                 }

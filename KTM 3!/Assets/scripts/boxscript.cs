@@ -8,8 +8,12 @@ public class boxscript : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer sprite;
 
+    public Sprite horizontal;
+    public Sprite vertical;
+
     public bool inHole = false;
     public bool held = false;
+    public bool Horizontal = false;
 
     int movetime = 0;
 
@@ -25,12 +29,10 @@ public class boxscript : MonoBehaviour
     {
         if (inHole)
         {
-            sprite.enabled = false;
             box.enabled = false;
         }
         else
         {
-            sprite.enabled = true;
             box.enabled = true;
         }
     }
@@ -207,15 +209,26 @@ public class boxscript : MonoBehaviour
         CheckFloor();
     }
 
-    void VisualUpdate(bool Held)
+    public void VisualUpdate(bool Held)
     {
         if (Held)
         {
-            this.transform.localScale = new Vector2(.9f, .9f);
+            sprite.enabled = false;
         }
         else
         {
-            this.transform.localScale = new Vector2(1, 1);
+            if (!inHole) 
+            {
+                sprite.enabled = true;
+            }
+            if (Horizontal)
+            {
+                sprite.sprite = horizontal;
+            }
+            else
+            {
+                sprite.sprite = vertical;
+            }
         }
     }
 
