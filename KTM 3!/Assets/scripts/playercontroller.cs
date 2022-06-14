@@ -48,6 +48,13 @@ public class playercontroller : MonoBehaviour
 
     private void Start()
     {
+        Animator = GetComponent<Animator>();
+        VisualUpdateInstant(directionfacing);
+        if (startHolding)
+        {
+            Animator.SetBool("box", true);
+        }
+
         Instantiate(failmap);
 
         Application.targetFrameRate = 60;
@@ -58,11 +65,10 @@ public class playercontroller : MonoBehaviour
         Undomanager = GetComponent<undomanager>();
         Failmap = FindObjectOfType<failmapscript>().GetComponent<failmapscript>();
         camera = FindObjectOfType<Camera>();
-        Animator = GetComponent<Animator>();
+
 
         StartCoroutine(FrameDelay(10));
 
-        VisualUpdateInstant(directionfacing);
     }
 
     void Update()
@@ -816,7 +822,7 @@ public class playercontroller : MonoBehaviour
                     Box.transform.localScale = new Vector3(.9f, .9f, 1);
                     Box.held = true;
                     Box.inHole = false;
-
+                    Box.VisualUpdate(true);
                     Undomanager.Set();
                 }
             }

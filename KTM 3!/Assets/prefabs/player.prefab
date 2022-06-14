@@ -60,7 +60,7 @@ MonoBehaviour:
   camwidth: 0
   camheight: 0
   movetime: 0
-  speed: 7
+  speed: 5
   canMove: 1
   startHolding: 0
   lastlevel: 0

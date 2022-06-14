@@ -212,25 +212,7 @@ public class boxscript : MonoBehaviour
 
     public void VisualUpdate(bool Held)
     {
-        if (Held)
-        {
-            sprite.enabled = false;
-        }
-        else
-        {
-            if (!inHole) 
-            {
-                sprite.enabled = true;
-            }
-            if (Horizontal)
-            {
-                sprite.sprite = horizontal;
-            }
-            else
-            {
-                sprite.sprite = vertical;
-            }
-        }
+        StartCoroutine(Delay(Held));
     }
 
     IEnumerator MoveRoutine(Vector2 dir)
@@ -283,5 +265,36 @@ public class boxscript : MonoBehaviour
         }
 
         inHole = true;
+    }
+
+    IEnumerator Delay(bool Held)
+    {
+        float x = 0;
+
+        while (x < 10)
+        {
+            x++;
+            yield return new WaitForEndOfFrame();
+        }
+
+        if (Held)
+        {
+            sprite.enabled = false;
+        }
+        else
+        {
+            if (!inHole)
+            {
+                sprite.enabled = true;
+            }
+            if (Horizontal)
+            {
+                sprite.sprite = horizontal;
+            }
+            else
+            {
+                sprite.sprite = vertical;
+            }
+        }
     }
 }
