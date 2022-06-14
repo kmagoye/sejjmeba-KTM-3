@@ -90,6 +90,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1165,6 +1166,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      animations_1: 5233256214266803174
+      animations_20: 741249282245206659
+      animations_22: -5098235848711545876
+      animations_35: -6086170282645517491
+      snimations_4: -3426660858267602612
+      snimations_2: 1561178123078505017
+      animations_4: 7228298480241165017
+      animations_34: 2850720695008435870
+      animations_13: 367422581238865491
+      animations_23: 4726110746182624181
+      animations_12: -204317558849974249
+      animations_28: 7576919007110398354
+      snimations_5: 680740887637835073
+      animations_29: -5386375163581929856
+      animations_30: -5262102257043538841
+      animations_37: 5095000996066909639
+      animations_33: -2462157970874149591
+      animations_16: 2004657967401344756
+      animations_10: 6948617177871721963
+      animations_27: -6571158952674405943
+      animations_9: 531892201746093753
+      snimations_7: -7379084798194995347
+      animations_24: 776144764867908008
+      animations_17: -8146644178066756174
+      animations_5: -6484940427387339519
+      animations_3: -1436953758834424533
+      animations_38: 5742579671635036542
+      animations_14: 1066728025655624107
+      snimations_6: 3933461124473652855
+      animations_8: 539338274146175859
+      animations_19: 5603576840549540096
+      snimations_3: 1093590322949010393
+      animations_7: -3756057528127506106
+      animations_6: 5443238823122320650
+      animations_32: 6492813731750354271
+      animations_21: -2975087935681428075
+      animations_26: 2841707452231419691
+      animations_18: 7699648647696747545
+      animations_15: 1348825586732935011
+      animations_36: -297328165709641742
+      animations_25: -3255720235127905656
+      animations_31: -2338845113084463350
+      animations_11: 5202641828653468396
+      animations_0: -960271038206414302
+      snimations_1: 6014151678569133897
+      snimations_0: -1505627653757483973
+      animations_2: 8280821644423036740
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -34,7 +34,7 @@ public class undomanager : MonoBehaviour
 
             for(int i = 0; i < gotstate.BoxPos.Count; i++)
             {
-                boxes[i].Undo(gotstate.BoxPos[i], gotstate.BoxHeld[i]);
+                boxes[i].Undo(gotstate.BoxPos[i], gotstate.BoxHeld[i], gotstate.BoxHor[i]);
             }
 
             x--;
@@ -48,6 +48,7 @@ public class undomanager : MonoBehaviour
         public boxscript HeldBox { get; set; }
         public List<Vector2> BoxPos = new List<Vector2>();
         public List<bool> BoxHeld = new List<bool>();
+        public List<bool> BoxHor = new List<bool>();
 
         public gamestate()
         {
@@ -60,6 +61,7 @@ public class undomanager : MonoBehaviour
             {
                 BoxPos.Add(box.transform.position);
                 BoxHeld.Add(box.held);
+                BoxHor.Add(box.Horizontal);
             }
         }
     }

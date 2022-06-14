@@ -62,7 +62,7 @@ public class playercontroller : MonoBehaviour
 
         StartCoroutine(FrameDelay(10));
 
-        VisualUpdateInstant();
+        VisualUpdateInstant(directionfacing);
     }
 
     void Update()
@@ -134,28 +134,30 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    private void VisualUpdateInstant()
-    {
-        if(directionfacing.x > 0)
+    private void VisualUpdateInstant(Vector2 dir)
+    { 
+        if(dir.x > 0)
         {
             Animator.SetTrigger("right");
         }
-        if(directionfacing.x < 0)
+        if(dir.x < 0)
         {
             Animator.SetTrigger("left");
         }
-        if (directionfacing.y > 0)
+        if (dir.y > 0)
         {
             Animator.SetTrigger("up");
         }
-        if (directionfacing.x < 0)
+        if (dir.y < 0)
         {
             Animator.SetTrigger("down");
         }
     }
 
-    void VisualUpdate(Vector2 oldDir, Vector2 newDir)
+    void VisualUpdate(Vector2 oldDir, Vector2 newDir, bool Left)
     {
+        Animator.SetBool("rotateleft", Left);
+        
         if(oldDir.x > 0)
         {
             if(newDir.y > 0)
@@ -546,7 +548,7 @@ public class playercontroller : MonoBehaviour
                 corner = 2;
             }
             
-            VisualUpdate(oldDirection , directionfacing);
+            VisualUpdate(oldDirection , directionfacing, left);
 
             if (Box != null)
             {
@@ -590,7 +592,7 @@ public class playercontroller : MonoBehaviour
                 corner = 1;
             }
 
-            VisualUpdate(oldDirection, directionfacing);
+            VisualUpdate(oldDirection, directionfacing, left);
 
             if (Box != null)
             {
@@ -695,6 +697,8 @@ public class playercontroller : MonoBehaviour
             Box.VisualUpdate(false);
             Box.CheckFloor();
             Box = null;
+
+            Animator.SetTrigger("grabdrop");
         }
         else
         {
@@ -710,6 +714,10 @@ public class playercontroller : MonoBehaviour
                     Box.VisualUpdate(true);
                     Box.held = true;
                     Box.inHole = false;
+
+                    Animator.SetBool("horizontal", Box.Horizontal);
+                    Animator.SetBool("box", Box);
+                    Animator.SetTrigger("grabdrop");
                 }
             }
         }
@@ -747,11 +755,20 @@ public class playercontroller : MonoBehaviour
 
     public void Undo(Vector2 position, Vector2 direction, boxscript box)
     {
+        if (box == null && Box != null)
+        {
+            Animator.SetTrigger("undo");
+        }
+        if (Box == null && box != null)
+        {
+            Animator.SetTrigger("undo");
+        }
+
         rb2d.position = position;
         directionfacing = direction;
         Box = box;
 
-        VisualUpdateInstant();
+        VisualUpdateInstant(direction);
     }
 
     IEnumerator MoveRoutine(Vector2 dir)

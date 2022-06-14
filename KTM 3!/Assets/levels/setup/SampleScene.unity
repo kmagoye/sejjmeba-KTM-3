@@ -149,7 +149,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 3
+  serializedVersion: 4
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 0
   m_EnableRealtimeLightmaps: 0
@@ -162,7 +162,7 @@ LightingSettings:
   m_LightmapMaxSize: 1024
   m_BakeResolution: 40
   m_Padding: 2
-  m_TextureCompression: 1
+  m_LightmapCompression: 3
   m_AO: 0
   m_AOMaxDistance: 1
   m_CompAOExponent: 1
@@ -203,6 +203,7 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+  m_PVRTiledBaking: 0
 --- !u!1001 &2001911050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,11 +217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.18
+      value: -9.02
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.16
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 5408932155344472533, guid: c0978d3de073840438d93c0dff4c3e03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1052,13 +1053,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3134042275877503954, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8420670720628680731, guid: 276203a0813a0284bb75dee52829b23d, type: 3}
-    - target: {fileID: 3134042275877503954, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
-      propertyPath: m_WasSpriteAssigned
+    - target: {fileID: 2029709455768564403, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029709455768564403, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298712, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_RootOrder
@@ -1107,6 +1108,18 @@ PrefabInstance:
     - target: {fileID: 4744626628399298717, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298717, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: directionfacing.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: directionfacing.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8897eb80b8743c4498017d319fd2425, type: 3}

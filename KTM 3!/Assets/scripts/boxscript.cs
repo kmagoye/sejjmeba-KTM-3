@@ -197,10 +197,11 @@ public class boxscript : MonoBehaviour
         }
     }
 
-    public void Undo(Vector2 position, bool Held)
+    public void Undo(Vector2 position, bool Held, bool Hor)
     {
         rb2d.position = position;
         held = Held;
+        Horizontal = Hor;
 
         VisualUpdate(Held);
 
