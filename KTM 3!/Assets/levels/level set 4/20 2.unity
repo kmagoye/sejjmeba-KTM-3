@@ -179,6 +179,10 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: lastlevel
       value: 1
       objectReference: {fileID: 0}
@@ -364,7 +368,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Size.x
-      value: 23
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Tiles.Array.size
@@ -1707,7 +1711,15 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
+      propertyPath: m_Tiles.Array.data[10].first.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
       propertyPath: m_Tiles.Array.data[11].first.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
+      propertyPath: m_Tiles.Array.data[11].first.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
@@ -1740,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_RefCount
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4511362655145502454, guid: 06524288c1e9bbf4087d8732b2784c28, type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_RefCount

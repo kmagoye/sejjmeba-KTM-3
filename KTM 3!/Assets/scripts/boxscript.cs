@@ -7,13 +7,14 @@ public class boxscript : MonoBehaviour
     BoxCollider2D box;
     Rigidbody2D rb2d;
     SpriteRenderer sprite;
+    Animator animator;
 
-    public Sprite horizontal;
-    public Sprite vertical;
-
+    public bool x = true;
+    bool y = true;
     public bool inHole = false;
     public bool held = false;
     public bool Horizontal = false;
+    public int layer = 7;
 
     int movetime = 0;
 
@@ -23,6 +24,7 @@ public class boxscript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,6 +36,15 @@ public class boxscript : MonoBehaviour
         else
         {
             box.enabled = true;
+        }
+
+        if(x == true && y == true)
+        {
+            sprite.enabled = true;
+        }
+        else
+        {
+            sprite.enabled = false;
         }
     }
 
@@ -164,7 +175,8 @@ public class boxscript : MonoBehaviour
 
     public void CheckFloor()
     {
-
+        bool oldinhole = inHole;
+        
         if (held)
         {
             inHole = false;
@@ -177,23 +189,28 @@ public class boxscript : MonoBehaviour
 
             if (hit == true)
             {
-                print(hit.transform.name);
-
                 if (hit.transform.CompareTag("hole"))
                 {
-                    StartCoroutine(fall(12));
+                    StartCoroutine(Fall());
                 }
                 else 
                 {
                     inHole = false;
+                    sprite.sortingOrder = 7;
                 }
             }
             else
             {
                 inHole = false;
+                sprite.sortingOrder = 7;
             }
 
             box.enabled = true;
+        }
+
+        if(oldinhole && !inHole)
+        {
+            animator.SetTrigger("undo");
         }
     }
 
@@ -250,21 +267,20 @@ public class boxscript : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
-
-    IEnumerator fall(float length)
+     
+    IEnumerator Fall()
     {
-        float x = 0;
-        
-        while (x < length)
+        int x = 0;
+        sprite.sortingOrder = 1;
+
+        while (x < 10)
         {
             x++;
-
-            this.transform.localScale = new Vector2(1 - x*(1/length), 1 - x*(1/length));
-
             yield return new WaitForEndOfFrame();
         }
 
-        inHole = true;
+        animator.SetTrigger("fall");
+        inHole = true; 
     }
 
     IEnumerator Delay(bool Held)
@@ -279,21 +295,21 @@ public class boxscript : MonoBehaviour
 
         if (Held)
         {
-            sprite.enabled = false;
+            y = false;
         }
         else
         {
             if (!inHole)
             {
-                sprite.enabled = true;
+                y = true;
             }
             if (Horizontal)
             {
-                sprite.sprite = horizontal;
+                animator.SetBool("hor", true);
             }
             else
             {
-                sprite.sprite = vertical;
+                animator.SetBool("hor", false);
             }
         }
     }

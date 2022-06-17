@@ -6,10 +6,9 @@ public class goalscript : MonoBehaviour
 {
     public bool won = false;
 
-    public Sprite on;
-    public Sprite off;
     public SpriteRenderer SpriteRenderer;
     Rigidbody2D rb2d;
+    Animator Animator;
 
     int playerlayer = 1 << 12;
 
@@ -38,6 +37,7 @@ public class goalscript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
         MoveChecks();
+        Animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -49,7 +49,6 @@ public class goalscript : MonoBehaviour
         if (hit)
         {
             won = true;
-            SpriteRenderer.sprite = on;
             if (!x)
             {
                 FindObjectOfType<playercontroller>().DataInput(FindObjectOfType<playercontroller>().lastmove, gameObject.name);
@@ -59,9 +58,10 @@ public class goalscript : MonoBehaviour
         else
         {
             won = false;
-            SpriteRenderer.sprite = off;
             x = false;
         }
+
+        Animator.SetBool("won", won);
     }
 
     public void MoveChecks()
