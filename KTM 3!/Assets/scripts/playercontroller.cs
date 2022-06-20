@@ -10,6 +10,7 @@ public class playercontroller : MonoBehaviour
     public boxscript Box;
     public GameObject winscreen;
     public GameObject failmap;
+    public GameObject errorAnim;
 
     Rigidbody2D rb2d;
     undomanager Undomanager;
@@ -68,11 +69,12 @@ public class playercontroller : MonoBehaviour
 
 
         StartCoroutine(FrameDelay(10));
-
     }
 
     void Update()
     {
+        print(canMove);
+
         if (canMove)
         {
             if (Input.GetKeyDown("up") && Controls.up == true)
@@ -80,6 +82,7 @@ public class playercontroller : MonoBehaviour
                 Move(directionfacing, true);
                 lastmove = 1;
             }
+
             if (Input.GetKeyDown("down") && Controls.down == true)
             {
                 Move(directionfacing, false);
@@ -90,6 +93,7 @@ public class playercontroller : MonoBehaviour
             {
                 CheckSwing(false);
             }
+
             if (Input.GetKeyDown("left") && Controls.left == true)
             {
                 CheckSwing(true);
@@ -103,6 +107,31 @@ public class playercontroller : MonoBehaviour
             if (Input.GetKeyDown("x"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            if (Input.GetKeyDown("up") && !Controls.up)
+            {
+                Instantiate(errorAnim, gameObject.transform);
+            }
+
+            if (Input.GetKeyDown("down") && !Controls.down)
+            {
+                Instantiate(errorAnim, gameObject.transform);
+            }
+
+            if (Input.GetKeyDown("right") && !Controls.right)
+            {
+                Instantiate(errorAnim, gameObject.transform);
+            }
+
+            if (Input.GetKeyDown("left") && !Controls.left)
+            {
+                Instantiate(errorAnim, gameObject.transform);
+            }
+
+            if (Input.GetKeyDown("space") && !Controls.space)
+            {
+                Instantiate(errorAnim, gameObject.transform);
             }
         }
 
@@ -118,7 +147,7 @@ public class playercontroller : MonoBehaviour
             directionmoving = -directionmoving;
         }
 
-        if(CheckMove(directionmoving, foreward) == false) 
+        if(!CheckMove(directionmoving, foreward)) 
         { 
             Undomanager.Set();
 
@@ -137,6 +166,10 @@ public class playercontroller : MonoBehaviour
             }
 
             StartCoroutine(MoveRoutine(directionmoving));
+        }
+        else
+        {
+            Instantiate(errorAnim, gameObject.transform);
         }
     }
 
@@ -167,7 +200,7 @@ public class playercontroller : MonoBehaviour
         if(oldDir.x > 0)
         {
             if(newDir.y > 0)
-            {
+            {   
                 Animator.SetTrigger("right to up");
             }
             if (newDir.y < 0)
@@ -508,9 +541,13 @@ public class playercontroller : MonoBehaviour
                 }
             }
 
-            if (wall == false)
+            if (!wall)
             {
                 swing(left); 
+            }
+            else
+            {
+                Instantiate(errorAnim, gameObject.transform);
             }
         }
     }
@@ -520,6 +557,8 @@ public class playercontroller : MonoBehaviour
         Undomanager.Set();
 
         Failmap.Playermove();
+
+        StartCoroutine(SwingDelay());
 
         if (!left)
         {
@@ -726,6 +765,10 @@ public class playercontroller : MonoBehaviour
                     Animator.SetTrigger("grabdrop");
                 }
             }
+            else
+            {
+                Instantiate(errorAnim, gameObject.transform);
+            }
         }
     }  
 
@@ -842,5 +885,21 @@ public class playercontroller : MonoBehaviour
                 FindObjectOfType<data_script>().EndLevel();
             }
         }
+    }
+
+    IEnumerator SwingDelay()
+    {
+        canMove = false;
+
+        int y = 0;
+        int length = 30;
+
+        while (y < length)
+        {
+            y++;
+            yield return new WaitForEndOfFrame();
+        }
+
+        canMove = true;
     }
   }

@@ -23,7 +23,6 @@ public class winlevelscript : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             FindObjectOfType<data_script>().SetTime();
-            print("as");
         }
     }
 }

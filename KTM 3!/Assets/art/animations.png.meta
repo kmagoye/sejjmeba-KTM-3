@@ -1324,6 +1324,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: animations_47
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: -0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecf1adf9927f4043b21b8460aa90e7e
+      internalID: 410846008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animations_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: -0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dc800637c07114b985974a262d78ed
+      internalID: -686096381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1341,6 +1383,7 @@ TextureImporter:
       animations_35: -6086170282645517491
       snimations_4: -3426660858267602612
       snimations_2: 1561178123078505017
+      animations_48: -686096381
       animations_4: 7228298480241165017
       animations_34: 2850720695008435870
       animations_13: 367422581238865491
@@ -1364,10 +1407,10 @@ TextureImporter:
       animations_5: -6484940427387339519
       animations_3: -1436953758834424533
       animations_38: 5742579671635036542
-      animations_14: 1066728025655624107
+      animations_46: 1506425673
       snimations_6: 3933461124473652855
       animations_44: 2035971453
-      animations_46: 1506425673
+      animations_14: 1066728025655624107
       animations_8: 539338274146175859
       animations_19: 5603576840549540096
       snimations_3: 1093590322949010393
@@ -1375,6 +1418,7 @@ TextureImporter:
       animations_6: 5443238823122320650
       animations_32: 6492813731750354271
       animations_21: -2975087935681428075
+      animations_47: 410846008
       animations_26: 2841707452231419691
       animations_45: -799384486
       animations_18: 7699648647696747545

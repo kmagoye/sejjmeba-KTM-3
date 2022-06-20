@@ -858,9 +858,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4744626628399298717, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4744626628399298717, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 4744626628399298718, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: errorAnim
+      value: 
+      objectReference: {fileID: 3711531711556246802, guid: 4afe198a2d818674b832f1484034af95, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
 --- !u!1001 &5114543826156165566

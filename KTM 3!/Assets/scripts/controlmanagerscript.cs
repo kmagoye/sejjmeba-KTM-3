@@ -69,11 +69,11 @@ public class controlmanagerscript : MonoBehaviour
 
     private void VisualUpdate()
     {
-        if(up == true)
+        if (up == true)
         {
             Up.GetComponent<Animator>().SetBool("on", true);
         }
-        else 
+        else
         {
             Up.GetComponent<Animator>().SetBool("on", false);
         }
