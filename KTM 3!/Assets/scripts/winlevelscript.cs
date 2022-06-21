@@ -21,8 +21,23 @@ public class winlevelscript : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            FindObjectOfType<data_script>().SetTime();
+            FindObjectOfType<transitionscript>().FadeOut();
+            StartCoroutine(Delay());
         }
+    }
+
+    IEnumerator Delay()
+    {
+        float x = FindObjectOfType<transitionscript>().length;
+        float y = 0;
+
+        while(y < x)
+        {
+            y++;
+            yield return new WaitForEndOfFrame();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FindObjectOfType<data_script>().SetTime();
     }
 }

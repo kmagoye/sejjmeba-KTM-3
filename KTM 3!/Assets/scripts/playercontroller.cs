@@ -9,7 +9,6 @@ public class playercontroller : MonoBehaviour
 
     public boxscript Box;
     public GameObject winscreen;
-    public GameObject failmap;
     public GameObject errorAnim;
 
     Rigidbody2D rb2d;
@@ -33,8 +32,6 @@ public class playercontroller : MonoBehaviour
     int playerlayer = 1 << 12;
 
     public int movetime;
-    int fps;
-    public int speed;
 
     public bool canMove = true;
 
@@ -55,8 +52,6 @@ public class playercontroller : MonoBehaviour
         {
             Animator.SetBool("box", true);
         }
-
-        Instantiate(failmap);
 
         Application.targetFrameRate = 60;
         Controls = FindObjectOfType<controlmanagerscript>();
@@ -106,7 +101,8 @@ public class playercontroller : MonoBehaviour
 
             if (Input.GetKeyDown("x"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                FindObjectOfType<transitionscript>().FadeOut();
+                StartCoroutine(Delay());
             }
 
             if (Input.GetKeyDown("up") && !Controls.up)
@@ -848,11 +844,6 @@ public class playercontroller : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        print(":P");
-
-        fps = Mathf.RoundToInt(1 / Time.deltaTime);
-        movetime = fps / speed;
-
         if (startHolding)
         {
             RaycastHit2D box = Physics2D.Raycast(transform.position, directionfacing, 1f, boxlayer);
@@ -872,6 +863,8 @@ public class playercontroller : MonoBehaviour
         }
 
         canMove = true;
+
+        FindObjectOfType<transitionscript>().FadeIn(120);
     }
 
     public void DataInput(int x, string name) //1 -> 5 are moves, 6 ends level
@@ -902,4 +895,19 @@ public class playercontroller : MonoBehaviour
 
         canMove = true;
     }
-  }
+
+    IEnumerator Delay()
+    {
+        float x = FindObjectOfType<transitionscript>().length;
+        float y = 0;
+
+        while (y < x)
+        {
+            y++;
+            yield return new WaitForEndOfFrame();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<transitionscript>().FadeIn(60);
+    }
+}

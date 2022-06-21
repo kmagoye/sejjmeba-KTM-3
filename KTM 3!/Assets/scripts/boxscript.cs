@@ -247,6 +247,14 @@ public class boxscript : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        x = 0;
+        
+        while(x < 3)
+        {
+            x++;
+            yield return new WaitForEndOfFrame();
+        }
+
         CheckFloor();
     }
 

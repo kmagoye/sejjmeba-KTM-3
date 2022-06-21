@@ -13,9 +13,13 @@ public class failmapscript : MonoBehaviour
 
     int PlateNum = 0;
 
+    SpriteRenderer sprite;
+
     private void Start()
     {
         StartCoroutine(wait(length));
+
+        sprite = GetComponent<SpriteRenderer>();
 
         boxes = FindObjectsOfType<boxscript>();
         plates = FindObjectsOfType<pressureplatescript>();
@@ -49,6 +53,8 @@ public class failmapscript : MonoBehaviour
         {
             Show = false;
         }
+
+        sprite.enabled = Show;
     }
 
     public void Playermove()
