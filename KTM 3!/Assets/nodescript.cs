@@ -5,9 +5,8 @@ using UnityEngine;
 public class nodescript : MonoBehaviour
 {
     public List<GameObject> nodes;
-
-    private void Start()
-    {
-        
-    }
+    public GameObject leftNode;
+    public GameObject rightNode;
+    public GameObject upNode;
+    public GameObject downNode;
 }
