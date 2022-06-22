@@ -1408,6 +1408,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: animations_51
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 117
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f089c152b954e2448b117c2780c57e41
+      internalID: -578589624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animations_52
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 117
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679592a2553beb84b92cdce6dbd839ca
+      internalID: -2043534439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1419,7 +1461,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animations_2: 8280821644423036740
+      animations_1: 5233256214266803174
       animations_20: 741249282245206659
       animations_22: -5098235848711545876
       animations_35: -6086170282645517491
@@ -1437,9 +1479,11 @@ TextureImporter:
       animations_30: -5262102257043538841
       animations_37: 5095000996066909639
       animations_33: -2462157970874149591
+      animations_52: -2043534439
       animations_16: 2004657967401344756
       animations_10: 6948617177871721963
       animations_49: 1370030763
+      animations_51: -578589624
       animations_27: -6571158952674405943
       animations_9: 531892201746093753
       snimations_7: -7379084798194995347
@@ -1477,7 +1521,7 @@ TextureImporter:
       animations_0: -960271038206414302
       snimations_1: 6014151678569133897
       snimations_0: -1505627653757483973
-      animations_1: 5233256214266803174
+      animations_2: 8280821644423036740
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

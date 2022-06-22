@@ -1,45 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mapplayerscript : MonoBehaviour
 {
     public nodescript currentNode;
     Rigidbody2D Rigidbody2D;
-
-    nodescript[] allNodes;
-    public List<GameObject> enabledNodes;
-
-    public GameObject topNode;
-    public GameObject bottomNode;
-    public GameObject leftNode;
-    public GameObject rightNode;
+    int map = 1 << 5;
 
     private void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        Rigidbody2D.position = currentNode.transform.position;
-        allNodes = FindObjectsOfType<nodescript>();
-        NodeRefresh();
+        Rigidbody2D.position = FindObjectOfType<data_script>().mostrecentlevel;
+
+        RaycastHit2D hit = Physics2D.Raycast(Rigidbody2D.position, transform.position, 0.1f, ~map);
+
+        if (hit)
+        {
+            currentNode = hit.transform.GetComponent<nodescript>();
+        }
+
+        if (FindObjectOfType<transitionscript>())
+        {
+            FindObjectOfType<transitionscript>().FadeIn(2);
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("right") && currentNode.rightNode)
         {
-            move(rightNode);
+            move(currentNode.rightNode);
         }
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKeyDown("left") && currentNode.leftNode)
         {
-            move(leftNode);
+            move(currentNode.leftNode);
         }
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown("down") && currentNode.downNode)
         {
-            move(bottomNode);
+            move(currentNode.downNode);
         }
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") && currentNode.upNode)
         {
-            move(topNode);
+            move(currentNode.upNode);
+        }
+
+        if (Input.GetKeyDown("space") && currentNode.playable)
+        {
+            if (FindObjectOfType<transitionscript>())
+            {
+                FindObjectOfType<transitionscript>().FadeOut();
+                StartCoroutine(Delay());
+            }
+            else
+            {
+                SceneManager.LoadScene(currentNode.level.name);
+            }
         }
     }
 
@@ -49,152 +66,21 @@ public class mapplayerscript : MonoBehaviour
         {
             Rigidbody2D.transform.position = targetNode.transform.position;
             currentNode = targetNode.GetComponent<nodescript>();
-            NodeRefresh();
+            FindObjectOfType<data_script>().ChangeLastTouchedLevel(targetNode);
         }
     }
 
-    void NodeRefresh()
+    IEnumerator Delay()
     {
-        enabledNodes.Clear();
-        leftNode = rightNode = bottomNode = topNode = null;
+        float x = FindObjectOfType<transitionscript>().length;
+        float y = 0;
 
-        foreach (nodescript node in allNodes)
+        while (y < x)
         {
-            node.enabled = false;
+            y++;
+            yield return new WaitForEndOfFrame();
         }
 
-        foreach (GameObject node in currentNode.nodes)
-        {
-            node.GetComponent<nodescript>().enabled = true;
-            enabledNodes.Add(node);
-        }
-
-        float x = 0;
-
-        //right
-        foreach (GameObject node in enabledNodes)
-        {
-            bool correctside = true;
-
-            float diff = node.transform.position.x - transform.position.x;
-
-            if (diff < 0)
-            {
-                correctside = false;
-            }
-
-            if (!rightNode)
-            {
-                if (correctside)
-                {
-                    x = diff;
-                    rightNode = node;
-                }
-            }
-            else
-            {
-                if (x > diff && correctside)
-                {
-                    x = diff;
-                    rightNode = node;
-                }
-            }
-        }
-
-        x = 0;
-
-        //left
-        foreach (GameObject node in enabledNodes)
-        {
-            bool correctside = true;
-
-            float diff = transform.position.x - node.transform.position.x;
-
-            if(diff < 0)
-            {
-                correctside = false;
-            }
-
-            if (!leftNode)
-            {
-                if (correctside)
-                {
-                    x = diff;
-                    leftNode = node;
-                }
-            }
-            else
-            {
-                if (x > diff && correctside)
-                {
-                    x = diff;
-                    leftNode = node;
-                }
-            }
-        }
-
-        x = 0;
-
-        //bottom
-        foreach (GameObject node in enabledNodes)
-        {
-            bool correctside = true;
-
-            float diff = transform.position.y - node.transform.position.y;
-
-            if (diff < 0)
-            {
-                correctside = false;
-            }
-
-            if (!bottomNode)
-            {
-                if (correctside)
-                {
-                    x = diff;
-                    bottomNode = node;
-                }
-            }
-            else
-            {
-                if (x > diff && correctside)
-                {
-                    x = diff;
-                    bottomNode = node;
-                }
-            }
-        }
-
-        x = 0;
-
-        //top
-        foreach (GameObject node in enabledNodes)
-        {
-            bool correctside = true;
-
-            float diff = node.transform.position.y - transform.position.y;
-
-            if (diff < 0)
-            {
-                correctside = false;
-            }
-
-            if (!topNode)
-            {
-                if (correctside)
-                {
-                    x = diff;
-                    topNode = node;
-                }
-            }
-            else
-            {
-                if (x > diff && correctside)
-                {
-                    x = diff;
-                    topNode = node;
-                }
-            }
-        }
+        SceneManager.LoadScene(currentNode.level.name);
     }
 }

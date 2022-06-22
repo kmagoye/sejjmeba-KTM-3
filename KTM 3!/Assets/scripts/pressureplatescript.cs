@@ -96,7 +96,6 @@ public class pressureplatescript : MonoBehaviour
 
                 if (!x)
                 {
-                    FindObjectOfType<playercontroller>().DataInput(FindObjectOfType<playercontroller>().lastmove, gameObject.name);
                     x = true;
                 }
             }

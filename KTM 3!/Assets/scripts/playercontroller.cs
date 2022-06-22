@@ -40,9 +40,6 @@ public class playercontroller : MonoBehaviour
 
     public bool lastlevel = false;
 
-    bool testmode = true;
-
-    public int lastmove = 0; //1,up 2,down 3,left, 4,right 5,space
 
     private void Start()
     {
@@ -68,20 +65,21 @@ public class playercontroller : MonoBehaviour
 
     void Update()
     {
-        print(canMove);
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene("map");
+        }
 
         if (canMove)
         {
             if (Input.GetKeyDown("up") && Controls.up == true)
             {
                 Move(directionfacing, true);
-                lastmove = 1;
             }
 
             if (Input.GetKeyDown("down") && Controls.down == true)
             {
                 Move(directionfacing, false);
-                lastmove = 2;
             }
 
             if (Input.GetKeyDown("right") && Controls.right == true)
@@ -558,8 +556,6 @@ public class playercontroller : MonoBehaviour
 
         if (!left)
         {
-            lastmove = 4;
-
             Vector2 oldDirection = directionfacing;
             Vector2 directionpush = new Vector2(0, 0);
             int corner = 0;
@@ -601,8 +597,6 @@ public class playercontroller : MonoBehaviour
         }
         if(left)
         {
-            lastmove = 3;
-
             Vector2 oldDirection = directionfacing;
             Vector2 directionpush = new Vector2(0, 0);
             int corner = 0;
@@ -728,8 +722,6 @@ public class playercontroller : MonoBehaviour
     {
         Failmap.Playermove();
 
-        lastmove = 5;
-
         if (Box)
         {
             Undomanager.Set();
@@ -795,7 +787,6 @@ public class playercontroller : MonoBehaviour
     {
         Instantiate(winscreen);
         this.GetComponent<playercontroller>().enabled = false;
-        DataInput(6, gameObject.name);
     }
 
     public void Undo(Vector2 position, Vector2 direction, boxscript box)
@@ -865,19 +856,6 @@ public class playercontroller : MonoBehaviour
         canMove = true;
 
         FindObjectOfType<transitionscript>().FadeIn(120);
-    }
-
-    public void DataInput(int x, string name) //1 -> 5 are moves, 6 ends level
-    {
-        if (testmode == false)
-        {
-            FindObjectOfType<data_script>().LastMove(x, name);
-            
-            if(x == 6)
-            {
-                FindObjectOfType<data_script>().EndLevel();
-            }
-        }
     }
 
     IEnumerator SwingDelay()

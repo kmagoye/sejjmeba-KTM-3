@@ -51,7 +51,6 @@ public class goalscript : MonoBehaviour
             won = true;
             if (!x)
             {
-                FindObjectOfType<playercontroller>().DataInput(FindObjectOfType<playercontroller>().lastmove, gameObject.name);
                 x = true;
             }
         }
@@ -69,8 +68,6 @@ public class goalscript : MonoBehaviour
         check_script[] checks = FindObjectsOfType<check_script>();
         float amnt = checks.Length;
         float dist = amnt - 1f;
-
-        print(amnt);
 
         foreach(check_script check in checks)
         {

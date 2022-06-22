@@ -4,49 +4,21 @@ using UnityEngine;
 
 public class data_script : MonoBehaviour
 {
-    public List<int> times = new List<int>();
-    public List<string> lastmoves = new List<string>();
+    public List<string> completelevels;
+    public Vector2 mostrecentlevel;
 
-    float InitialTime;
-
-    void Awake()
+    private void Start()
     {
-        DontDestroyOnLoad(this);
-        InitialTime = Time.realtimeSinceStartup;
+        DontDestroyOnLoad(this);   
     }
 
-    public void EndLevel()
+    public void WonLevel(int level)
     {
-        lastmoves.Add("||");
-        times.Add(Mathf.RoundToInt(Time.realtimeSinceStartup - InitialTime));
+        completelevels.Add(level.ToString());
     }
 
-    public void SetTime()
+    public void ChangeLastTouchedLevel(GameObject node)
     {
-        InitialTime = Time.realtimeSinceStartup;
-    }
-
-    public void LastMove(int x, string name)
-    {
-        if (x == 1)
-        {
-            lastmoves.Add("up" + "," + name + " ");
-        }
-        if (x == 2)
-        {
-            lastmoves.Add("down" + "," + name + " ");
-        }
-        if (x == 3)
-        {
-            lastmoves.Add("left" + "," + name + " ");
-        }
-        if (x == 4)
-        {
-            lastmoves.Add("right" + "," + name + " ");
-        }
-        if (x == 5)
-        {
-            lastmoves.Add("space" + "," + name + " ");
-        }
+        mostrecentlevel = node.transform.position;
     }
 }

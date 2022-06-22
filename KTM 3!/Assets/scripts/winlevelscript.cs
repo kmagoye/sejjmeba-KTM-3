@@ -22,6 +22,7 @@ public class winlevelscript : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             FindObjectOfType<transitionscript>().FadeOut();
+            FindObjectOfType<data_script>().WonLevel(SceneManager.GetActiveScene().buildIndex + 1);
             StartCoroutine(Delay());
         }
     }
@@ -37,7 +38,6 @@ public class winlevelscript : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        FindObjectOfType<data_script>().SetTime();
+        SceneManager.LoadScene("map");
     }
 }
