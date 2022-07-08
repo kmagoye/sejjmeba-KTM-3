@@ -793,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543897736344604760, guid: 3b37eec2e56e0ee4f8ea7fd028d2a888, type: 3}
       propertyPath: completelevels.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543897736344604760, guid: 3b37eec2e56e0ee4f8ea7fd028d2a888, type: 3}
       propertyPath: completelevels.Array.data[0]
@@ -2619,7 +2619,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.4423869, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
