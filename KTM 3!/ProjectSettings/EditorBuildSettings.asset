@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/levels/setup/map.unity
+    guid: 61a4e530bfcdf42c085d6e4fffe12358
+  - enabled: 1
     path: Assets/levels/level set 4/1 2.unity
     guid: 42ed97b04e123437cb023ab67e437504
   - enabled: 1
@@ -45,8 +48,8 @@ EditorBuildSettings:
     path: Assets/levels/level set 4/16 2.unity
     guid: e1581482c58da4153a0fbe3e5e3a129a
   - enabled: 1
-    path: Assets/levels/level set 3/14 1.unity
-    guid: ef30a5d8f70564f889e0d58ddc2efc49
+    path: Assets/levels/level set 4/14 2.unity
+    guid: 80c0046fcdce74f229ea00d39326868b
   - enabled: 1
     path: Assets/levels/level set 4/12 2.unity
     guid: 58d64eb433f2d4535b069037eb8b0b51
@@ -65,7 +68,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/levels/level set 4/19 1.unity
     guid: 22773576822c54db5b43f5ffc7f583bb
+  - enabled: 1
+    path: Assets/levels/setup/credits.unity
+    guid: 0d6c87047754c4d4f902bce9b136c7d9
   - enabled: 0
-    path: Assets/levels/setup/data.unity
-    guid: 38b03827f8c9d4d40846c48b5a163ac7
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

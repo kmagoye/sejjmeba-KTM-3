@@ -7,13 +7,25 @@ public class transitionscript : MonoBehaviour
     Color x;
     public float length;
     Rigidbody2D rb2d;
+    public bool startup = true;
+
+    void Awake()
+    {
+        if (FindObjectsOfType<transitionscript>().Length != 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     private void Start()
     {
         x = GetComponent<SpriteRenderer>().color;
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.position = FindObjectOfType<Camera>().transform.position;
-        DontDestroyOnLoad(this);
     }
 
     private void Update()
@@ -24,6 +36,14 @@ public class transitionscript : MonoBehaviour
     public void FadeIn(int initialDelay)
     {
         StartCoroutine(fadeIn(initialDelay));
+        if (startup)
+        {
+            startup = false;
+        }
+        else
+        {
+            FindObjectOfType<menuplayerscript>().MenutoMap(2f);
+        }
     }
     IEnumerator fadeIn(int initialDelay)
     {

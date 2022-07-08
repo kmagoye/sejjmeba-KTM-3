@@ -7,9 +7,16 @@ public class data_script : MonoBehaviour
     public List<string> completelevels;
     public Vector2 mostrecentlevel;
 
-    private void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(this);   
+        if (FindObjectsOfType<data_script>().Length != 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void WonLevel(int level)
@@ -20,5 +27,15 @@ public class data_script : MonoBehaviour
     public void ChangeLastTouchedLevel(GameObject node)
     {
         mostrecentlevel = node.transform.position;
+    }
+
+    public void NewGame()
+    {
+        if(completelevels != null)
+        {
+            completelevels.Clear();
+        }
+
+        mostrecentlevel = new Vector2(0,17.25f);
     }
 }

@@ -36,43 +36,45 @@ public class nodescript : MonoBehaviour
 
     private void Update()
     {
+        int z = 0;
+
         foreach(string completelevel in FindObjectOfType<data_script>().completelevels)
         {
             if(completelevel == gameObject.name)
             {
-                won = true;
+                z++;
             }
         }
 
-        if (!eitheror)
+        if(z == 1)
         {
-            int score = 0;
-
-            foreach (nodescript precursor in precursors)
-            {
-                if (!precursor.won)
-                {
-                    score++;
-                }
-            }
-
-            if (score == 0)
-            {
-                playable = true;
-            }
+            won = true;
         }
         else
         {
-            foreach (nodescript precursor in precursors)
+            won = false;
+        }
+
+        int score = 0;
+
+        foreach (nodescript precursor in precursors)
+        {
+            if (!precursor.won)
             {
-                if (!precursor.won)
-                {
-                    playable = true;
-                }
+                score++;
             }
         }
 
-        if(won && playable)
+        if (score == 0)
+        {
+            playable = true;
+        }
+        else
+        {
+            playable = false;
+        }
+
+        if (won && playable)
         {
             sprite.sprite = lights.GetComponent<nodelightscript>().won;
         }

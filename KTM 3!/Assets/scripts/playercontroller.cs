@@ -59,7 +59,7 @@ public class playercontroller : MonoBehaviour
         Failmap = FindObjectOfType<failmapscript>().GetComponent<failmapscript>();
         camera = FindObjectOfType<Camera>();
 
-
+        
         StartCoroutine(FrameDelay(10));
     }
 

@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pressure plate
       objectReference: {fileID: 0}
+    - target: {fileID: 1205988015375394749, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1205988015375394750, guid: dbeed555b9c007d41a162dfdd687a182, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -244,6 +248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1012555353, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.34375
+      objectReference: {fileID: 0}
     - target: {fileID: 2029709455768564403, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -252,10 +260,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6014151678569133897, guid: 6ba4f65a935d73c45a80af5463d8f234, type: 3}
-    - target: {fileID: 3134042275877503954, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3134042275877503954, guid: e8897eb80b8743c4498017d319fd2425, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

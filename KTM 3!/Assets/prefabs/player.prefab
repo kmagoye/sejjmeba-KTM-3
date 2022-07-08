@@ -137,7 +137,6 @@ MonoBehaviour:
   directionfacing: {x: 0, y: 1}
   Box: {fileID: 0}
   winscreen: {fileID: 8650324103141291021, guid: bc6c1bc5dea5e754c97bbaac7c82bdec, type: 3}
-  failmap: {fileID: 2596528542800873242, guid: aafb7e5d0feba4c2abdf565f046599d7, type: 3}
   errorAnim: {fileID: 3711531711556246802, guid: 4afe198a2d818674b832f1484034af95, type: 3}
   right: {fileID: -3426660858267602612, guid: 6ba4f65a935d73c45a80af5463d8f234, type: 3}
   left: {fileID: 1093590322949010393, guid: 6ba4f65a935d73c45a80af5463d8f234, type: 3}
@@ -149,7 +148,6 @@ MonoBehaviour:
   canMove: 1
   startHolding: 0
   lastlevel: 0
-  lastmove: 0
 --- !u!61 &1012555353
 BoxCollider2D:
   m_ObjectHideFlags: 0

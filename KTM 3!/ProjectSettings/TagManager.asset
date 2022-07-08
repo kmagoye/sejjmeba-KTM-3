@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - walls
+  - goal
+  - hole
+  - pressure plate
+  - box
+  - button
   layers:
   - Default
   - TransparentFX

@@ -969,11 +969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileAssetArray.Array.data[2].m_RefCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileAssetArray.Array.data[3].m_RefCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileAssetArray.Array.data[4].m_RefCount
@@ -1029,7 +1029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Tiles.Array.data[16].second.m_TileIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Tiles.Array.data[17].second.m_TileIndex
@@ -1085,11 +1085,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_RefCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[3].m_RefCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[4].m_RefCount
@@ -1273,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Tiles.Array.data[16].second.m_TileSpriteIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6948040205194853095, guid: 5bd00ce199104794abfc3dab385b1f94, type: 3}
       propertyPath: m_Tiles.Array.data[17].second.m_TileSpriteIndex

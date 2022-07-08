@@ -29,6 +29,8 @@ public class boxscript : MonoBehaviour
 
     private void Update()
     {
+        transform.localScale = new Vector3(1, 1, 1);
+
         if (inHole)
         {
             box.enabled = false;
