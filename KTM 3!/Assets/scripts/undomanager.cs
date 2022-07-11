@@ -28,6 +28,8 @@ public class undomanager : MonoBehaviour
     {
         if (Input.GetKeyDown("z") && x != 0 )
         {
+            FindObjectOfType<soundscript>().PlaySound("undo");
+
             gamestate gotstate = stack.Pop();
 
             player.Undo(gotstate.PlayerPos, gotstate.PlayerDir, gotstate.HeldBox);

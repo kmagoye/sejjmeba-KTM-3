@@ -24,11 +24,12 @@ public class menuplayerscript : MonoBehaviour
         {
             if (hit.transform.CompareTag("button"))
             {
-                hit.transform.GetComponent<buttonscript>().Selected = true;
+                hit.transform.GetComponent<buttonscript>().Selected = true; 
 
                 if (Input.GetMouseButtonDown(0))
                 {
                     hit.transform.GetComponent<buttonscript>().Click();
+                    FindObjectOfType<soundscript>().PlaySound("menu");
                 }
             }
         }

@@ -98,6 +98,18 @@ public class boxscript : MonoBehaviour
 
         box.enabled = true;
 
+        if (FindObjectOfType<playercontroller>().Box)
+        {
+            if(FindObjectOfType<playercontroller>().Box.name != this.name)
+            {
+                FindObjectOfType<soundscript>().PlaySound("bonk");
+            }
+        }
+        else
+        {
+            FindObjectOfType<soundscript>().PlaySound("bonk");
+        }
+
         StartCoroutine(MoveRoutine(direction));
     }
 

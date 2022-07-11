@@ -30,7 +30,8 @@ public class creditplayer : MonoBehaviour
 
         if (Input.GetKeyDown("up"))
         {
-            if(state == 0)
+            FindObjectOfType<soundscript>().PlaySound("move");
+            if (state == 0)
             {
                 up.Priority = 1;
                 down.Priority = 0;
@@ -53,6 +54,7 @@ public class creditplayer : MonoBehaviour
         }
         if (Input.GetKeyDown("down"))
         {
+            FindObjectOfType<soundscript>().PlaySound("move");
             if (state == 0)
             {
                 up.Priority = 0;
@@ -76,6 +78,7 @@ public class creditplayer : MonoBehaviour
         }
         if (Input.GetKeyDown("left"))
         {
+            FindObjectOfType<soundscript>().PlaySound("move");
             if (state == 0)
             {
                 up.Priority = 0;
@@ -99,6 +102,7 @@ public class creditplayer : MonoBehaviour
         }
         if (Input.GetKeyDown("right"))
         {
+            FindObjectOfType<soundscript>().PlaySound("move");
             if (state == 0)
             {
                 up.Priority = 0;

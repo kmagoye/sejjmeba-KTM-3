@@ -9,6 +9,7 @@ public class erroranimation : MonoBehaviour
     private void Start()
     { 
         FindObjectOfType<playercontroller>().canMove = false;
+        FindObjectOfType<soundscript>().PlaySound("error");
     }
 
     private void Update()

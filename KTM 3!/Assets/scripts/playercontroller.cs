@@ -160,6 +160,8 @@ public class playercontroller : MonoBehaviour
             }
 
             StartCoroutine(MoveRoutine(directionmoving));
+
+            FindObjectOfType<soundscript>().PlaySound("move");
         }
         else
         {
@@ -554,6 +556,11 @@ public class playercontroller : MonoBehaviour
 
         StartCoroutine(SwingDelay());
 
+        if (Box)
+        {
+            FindObjectOfType<soundscript>().PlaySound("swing");
+        }
+
         if (!left)
         {
             Vector2 oldDirection = directionfacing;
@@ -803,6 +810,8 @@ public class playercontroller : MonoBehaviour
         rb2d.position = position;
         directionfacing = direction;
         Box = box;
+
+        Failmap.Playermove();
 
         VisualUpdateInstant(direction);
     }

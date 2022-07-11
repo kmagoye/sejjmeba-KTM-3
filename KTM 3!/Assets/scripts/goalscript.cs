@@ -52,6 +52,7 @@ public class goalscript : MonoBehaviour
             if (!x)
             {
                 x = true;
+
             }
         }
         else

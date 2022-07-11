@@ -61,6 +61,8 @@ public class mapplayerscript : MonoBehaviour
 
             if (Input.GetKeyDown("space") && currentNode.playable)
             {
+                FindObjectOfType<soundscript>().PlaySound("menu");
+
                 if (FindObjectOfType<transitionscript>())
                 {
                     FindObjectOfType<transitionscript>().FadeOut();
@@ -86,6 +88,7 @@ public class mapplayerscript : MonoBehaviour
             Rigidbody2D.transform.position = targetNode.transform.position;
             currentNode = targetNode.GetComponent<nodescript>();
             FindObjectOfType<data_script>().ChangeLastTouchedLevel(targetNode);
+            FindObjectOfType<soundscript>().PlaySound("menu");
         }
     }
 
