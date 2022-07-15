@@ -5,7 +5,7 @@ using UnityEngine;
 public class transitionscript : MonoBehaviour
 {
     Color x;
-    public float length;
+    public float length = 120f;
     Rigidbody2D rb2d;
     public bool startup = true;
 
@@ -33,14 +33,14 @@ public class transitionscript : MonoBehaviour
         GetComponent<SpriteRenderer>().color = x;
     }
 
-    public void FadeIn(int initialDelay)
+    public void FadeIn(int initialDelay, bool intolevel)
     {
         StartCoroutine(fadeIn(initialDelay));
         if (startup)
         {
             startup = false;
         }
-        else
+        else if(!intolevel)
         {
             FindObjectOfType<menuplayerscript>().MenutoMap(2f);
         }

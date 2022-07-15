@@ -27,7 +27,7 @@ public class controlmanagerscript : MonoBehaviour
     pressureplatescript[] pressureplates;
 
     private void Start()
-    {
+    {   
         VisualUpdate();
 
         pressureplates = FindObjectsOfType<pressureplatescript>();

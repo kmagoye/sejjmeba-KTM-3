@@ -16,7 +16,7 @@ public class creditplayer : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<transitionscript>().FadeIn(2);
+        FindObjectOfType<transitionscript>().FadeIn(2, true);
     }
 
     private void Update()

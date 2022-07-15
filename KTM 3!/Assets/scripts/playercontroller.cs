@@ -37,7 +37,6 @@ public class playercontroller : MonoBehaviour
 
     public bool startHolding = false;
 
-
     public bool lastlevel = false;
 
 
@@ -864,7 +863,7 @@ public class playercontroller : MonoBehaviour
 
         canMove = true;
 
-        FindObjectOfType<transitionscript>().FadeIn(120);
+        FindObjectOfType<transitionscript>().FadeIn(120,true);
     }
 
     IEnumerator SwingDelay()
@@ -895,6 +894,6 @@ public class playercontroller : MonoBehaviour
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        FindObjectOfType<transitionscript>().FadeIn(60);
+        FindObjectOfType<transitionscript>().FadeIn(60, true);
     }
 }

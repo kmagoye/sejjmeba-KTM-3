@@ -38,6 +38,8 @@ public class goalscript : MonoBehaviour
         rb2d.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
         MoveChecks();
         Animator = GetComponent<Animator>();
+
+
     }
 
     private void Update()
