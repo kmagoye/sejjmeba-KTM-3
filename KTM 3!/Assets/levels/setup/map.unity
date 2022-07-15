@@ -157,7 +157,7 @@ MonoBehaviour:
   rightNode: {fileID: 250433045}
   upNode: {fileID: 1457472679}
   downNode: {fileID: 250433045}
-  level: {fileID: 102900000, guid: 53efec5c3ebea48928d41ee470dec5cc, type: 3}
+  level: 6
   won: 0
   playable: 0
   firstlevel: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   rightNode: {fileID: 1640500385}
   upNode: {fileID: 1160847404}
   downNode: {fileID: 1640500385}
-  level: {fileID: 102900000, guid: 5c2cffe0b31274ad38e1f0edba8a7f13, type: 3}
+  level: 3
   won: 0
   playable: 0
   firstlevel: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   rightNode: {fileID: 1356607034}
   upNode: {fileID: 250433045}
   downNode: {fileID: 1356607034}
-  level: {fileID: 102900000, guid: 6b10b52485eea42a0bb1b6e2ee9ad410, type: 3}
+  level: 9
   won: 0
   playable: 0
   firstlevel: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   rightNode: {fileID: 118563839}
   upNode: {fileID: 15571692}
   downNode: {fileID: 118563839}
-  level: {fileID: 102900000, guid: a3cb1b78e2d8a42f4946b0d5ff799441, type: 3}
+  level: 7
   won: 0
   playable: 0
   firstlevel: 0
@@ -878,7 +878,7 @@ MonoBehaviour:
   rightNode: {fileID: 1462768979}
   upNode: {fileID: 1377084457}
   downNode: {fileID: 1462768979}
-  level: {fileID: 102900000, guid: e1581482c58da4153a0fbe3e5e3a129a, type: 3}
+  level: 16
   won: 0
   playable: 0
   firstlevel: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   rightNode: {fileID: 1456698516}
   upNode: {fileID: 1927156379}
   downNode: {fileID: 1456698516}
-  level: {fileID: 102900000, guid: bb240015024d74f199d46551773b78e2, type: 3}
+  level: 17
   won: 0
   playable: 0
   firstlevel: 0
@@ -1387,7 +1387,7 @@ MonoBehaviour:
   rightNode: {fileID: 1260243665}
   upNode: {fileID: 1260243665}
   downNode: {fileID: 1846689838}
-  level: {fileID: 102900000, guid: 6cb42c2fbabf94aababb8d5e7a82eefb, type: 3}
+  level: 18
   won: 0
   playable: 0
   firstlevel: 0
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   rightNode: {fileID: 250433045}
   upNode: {fileID: 250433045}
   downNode: {fileID: 1219746540}
-  level: {fileID: 102900000, guid: bd2b6bbae61624234ab4487d2d0aa40e, type: 3}
+  level: 10
   won: 0
   playable: 0
   firstlevel: 0
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   rightNode: {fileID: 1768405979}
   upNode: {fileID: 1160847404}
   downNode: {fileID: 1768405979}
-  level: {fileID: 102900000, guid: 42ed97b04e123437cb023ab67e437504, type: 3}
+  level: 1
   won: 0
   playable: 0
   firstlevel: 1
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   rightNode: {fileID: 118563839}
   upNode: {fileID: 1064376895}
   downNode: {fileID: 118563839}
-  level: {fileID: 102900000, guid: 0df1a3cfabb9f4a6397bcfbb7b4678c2, type: 3}
+  level: 8
   won: 0
   playable: 0
   firstlevel: 0
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   rightNode: {fileID: 708599120}
   upNode: {fileID: 708599120}
   downNode: {fileID: 809304300}
-  level: {fileID: 102900000, guid: 4c639a6e218df4593897c06e9f4f115d, type: 3}
+  level: 15
   won: 0
   playable: 0
   firstlevel: 0
@@ -2004,7 +2004,7 @@ MonoBehaviour:
   rightNode: {fileID: 0}
   upNode: {fileID: 118563839}
   downNode: {fileID: 1377084457}
-  level: {fileID: 102900000, guid: 4302bebaba9c54d2f91c8b5a08015c49, type: 3}
+  level: 11
   won: 0
   playable: 0
   firstlevel: 0
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   rightNode: {fileID: 1356607034}
   upNode: {fileID: 1356607034}
   downNode: {fileID: 1462768979}
-  level: {fileID: 102900000, guid: 8cc6d33eda85d4b1aa8ef4bb9bf24400, type: 3}
+  level: 13
   won: 0
   playable: 0
   firstlevel: 0
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   rightNode: {fileID: 0}
   upNode: {fileID: 708599120}
   downNode: {fileID: 1846689838}
-  level: {fileID: 102900000, guid: a273d13d51cc7453abd2c1c94801e335, type: 3}
+  level: 20
   won: 0
   playable: 0
   firstlevel: 0
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   rightNode: {fileID: 0}
   upNode: {fileID: 1640500385}
   downNode: {fileID: 15571692}
-  level: {fileID: 102900000, guid: 96545cf4a8f874f438a9b3a20967a67b, type: 3}
+  level: 5
   won: 0
   playable: 0
   firstlevel: 0
@@ -2484,7 +2484,7 @@ MonoBehaviour:
   rightNode: {fileID: 1927156379}
   upNode: {fileID: 1377084457}
   downNode: {fileID: 1927156379}
-  level: {fileID: 102900000, guid: 80c0046fcdce74f229ea00d39326868b, type: 3}
+  level: 14
   won: 0
   playable: 0
   firstlevel: 0
@@ -2632,7 +2632,7 @@ MonoBehaviour:
   rightNode: {fileID: 1457472679}
   upNode: {fileID: 1768405979}
   downNode: {fileID: 1457472679}
-  level: {fileID: 102900000, guid: 2af3c8e5c984e4a5d98b1b67b0f9eaf3, type: 3}
+  level: 4
   won: 0
   playable: 0
   firstlevel: 0
@@ -2736,6 +2736,14 @@ PrefabInstance:
     - target: {fileID: 5974952163137246750, guid: 362a76ddf7dcd8b42a7356b701684fad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974952163137246751, guid: 362a76ddf7dcd8b42a7356b701684fad, type: 3}
+      propertyPath: menu
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974952163137246751, guid: 362a76ddf7dcd8b42a7356b701684fad, type: 3}
+      propertyPath: startup
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 362a76ddf7dcd8b42a7356b701684fad, type: 3}
@@ -2914,7 +2922,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4423869, y: 1}
+    m_SensorSize: {x: 2.288066, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2988,7 +2996,7 @@ MonoBehaviour:
   rightNode: {fileID: 0}
   upNode: {fileID: 1160847404}
   downNode: {fileID: 1640500385}
-  level: {fileID: 102900000, guid: 96617c72ad2a949629abd9d1fce8292d, type: 3}
+  level: 2
   won: 0
   playable: 0
   firstlevel: 0
@@ -3071,7 +3079,7 @@ MonoBehaviour:
   rightNode: {fileID: 1456698516}
   upNode: {fileID: 809304300}
   downNode: {fileID: 0}
-  level: {fileID: 102900000, guid: 22773576822c54db5b43f5ffc7f583bb, type: 3}
+  level: 19
   won: 0
   playable: 0
   firstlevel: 0
@@ -3155,7 +3163,7 @@ MonoBehaviour:
   rightNode: {fileID: 0}
   upNode: {fileID: 1462768979}
   downNode: {fileID: 708599120}
-  level: {fileID: 102900000, guid: 58d64eb433f2d4535b069037eb8b0b51, type: 3}
+  level: 12
   won: 0
   playable: 0
   firstlevel: 0

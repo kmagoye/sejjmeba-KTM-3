@@ -862,8 +862,6 @@ public class playercontroller : MonoBehaviour
         }
 
         canMove = true;
-
-        FindObjectOfType<transitionscript>().FadeIn(120,true);
     }
 
     IEnumerator SwingDelay()
@@ -871,7 +869,7 @@ public class playercontroller : MonoBehaviour
         canMove = false;
 
         int y = 0;
-        int length = 30;
+        int length = 7;
 
         while (y < length)
         {
@@ -894,6 +892,5 @@ public class playercontroller : MonoBehaviour
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        FindObjectOfType<transitionscript>().FadeIn(60, true);
     }
 }

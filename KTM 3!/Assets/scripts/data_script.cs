@@ -6,6 +6,7 @@ public class data_script : MonoBehaviour
 {
     public List<string> completelevels;
     public Vector2 mostrecentlevel;
+    public bool startup = true;
 
     void Awake()
     {
@@ -31,6 +32,8 @@ public class data_script : MonoBehaviour
 
     public void NewGame()
     {
+        startup = true;
+
         if(completelevels != null)
         {
             completelevels.Clear();
@@ -38,4 +41,9 @@ public class data_script : MonoBehaviour
 
         mostrecentlevel = new Vector2(0,17.25f);
     }
+
+    public void Toggle()
+    {
+        startup = false;
+    } 
 }

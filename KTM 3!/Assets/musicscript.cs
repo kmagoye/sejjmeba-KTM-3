@@ -33,8 +33,6 @@ public class musicscript : MonoBehaviour
 
         audiosource.clip = one;
         StartCoroutine(SongDelay(120));
-
-        x++;
     }
 
     private void Update()
@@ -64,7 +62,7 @@ public class musicscript : MonoBehaviour
                     x++;
                     break;
                 case 5:
-                    audiosource.clip = two;
+                    audiosource.clip = one;
                     StartCoroutine(SongDelay(600));
                     x = 1;
                     break;

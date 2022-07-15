@@ -14,10 +14,6 @@ public class creditplayer : MonoBehaviour
 
     int state = 0; //0 mid, 1 up, 2 right, 3 down, 4 left
 
-    private void Start()
-    {
-        FindObjectOfType<transitionscript>().FadeIn(2, true);
-    }
 
     private void Update()
     {

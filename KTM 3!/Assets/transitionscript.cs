@@ -5,27 +5,17 @@ using UnityEngine;
 public class transitionscript : MonoBehaviour
 {
     Color x;
-    public float length = 120f;
+    public float length = 20f;
     Rigidbody2D rb2d;
     public bool startup = true;
-
-    void Awake()
-    {
-        if (FindObjectsOfType<transitionscript>().Length != 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    public bool menu;
 
     private void Start()
     {
         x = GetComponent<SpriteRenderer>().color;
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.position = FindObjectOfType<Camera>().transform.position;
+        FadeIn(20);
     }
 
     private void Update()
@@ -33,14 +23,14 @@ public class transitionscript : MonoBehaviour
         GetComponent<SpriteRenderer>().color = x;
     }
 
-    public void FadeIn(int initialDelay, bool intolevel)
+    public void FadeIn(int initialDelay)
     {
         StartCoroutine(fadeIn(initialDelay));
-        if (startup)
+        if (FindObjectOfType<data_script>().startup)
         {
-            startup = false;
+            FindObjectOfType<data_script>().Toggle();
         }
-        else if(!intolevel)
+        else if(menu)
         {
             FindObjectOfType<menuplayerscript>().MenutoMap(2f);
         }

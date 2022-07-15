@@ -12,7 +12,6 @@ public class mapplayerscript : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<transitionscript>().FadeIn(2,false);
 
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Rigidbody2D.position = FindObjectOfType<data_script>().mostrecentlevel;
@@ -70,7 +69,7 @@ public class mapplayerscript : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(currentNode.level.name);
+                    SceneManager.LoadScene(currentNode.level);
                 }
             }
 
@@ -103,7 +102,7 @@ public class mapplayerscript : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        SceneManager.LoadScene(currentNode.level.name);
+        SceneManager.LoadScene(currentNode.level);
     }
 
     void MaptoMenu()

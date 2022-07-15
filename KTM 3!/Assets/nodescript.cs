@@ -10,7 +10,7 @@ public class nodescript : MonoBehaviour
     public GameObject upNode;
     public GameObject downNode;
 
-    public Object level;
+    public string level;
 
     public bool won = false;
     public bool playable = false;

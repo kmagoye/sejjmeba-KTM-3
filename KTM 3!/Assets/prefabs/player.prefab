@@ -144,7 +144,7 @@ MonoBehaviour:
   down: {fileID: 3933461124473652855, guid: 6ba4f65a935d73c45a80af5463d8f234, type: 3}
   camwidth: 0
   camheight: 0
-  movetime: 15
+  movetime: 2
   canMove: 1
   startHolding: 0
   lastlevel: 0
